@@ -179,7 +179,32 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 4000); // Toast disappears after 4s
     }
 
-    // 8. Scroll Reveal Animations (Intersection Observer)
+    // 8. Scroll Spy for Active Navigation Link
+    const sections = document.querySelectorAll('section, header');
+    const navItems = document.querySelectorAll('.nav-link');
+    
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (window.scrollY >= (sectionTop - sectionHeight / 3)) {
+                const id = section.getAttribute('id');
+                if (id) {
+                    current = id;
+                }
+            }
+        });
+
+        navItems.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+    // 9. Scroll Reveal Animations (Intersection Observer)
     const revealElements = document.querySelectorAll('.reveal');
     const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
