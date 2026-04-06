@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neha Gupta | GenAI & Full Stack Developer</title>
+    <meta name="description" content="Professional portfolio of Neha Gupta, specializing in Full Stack Development, GenAI, and Large Language Models.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Back to top -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+    </button>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">NG<span>.</span></a>
+            
+            <div class="nav-controls">
+                <!-- Dark Mode Toggle -->
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                    <svg class="sun-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    <svg class="moon-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                </button>
+
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#genai" class="nav-link">GenAI focus</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+        <div class="scroll-progress-container">
+            <div class="scroll-progress-bar" id="scroll-bar"></div>
+        </div>
+    </nav>
+
+    <!-- Header / Hero Section -->
+    <header class="hero" id="about">
+        <div class="hero-content">
+            <h1 class="fade-in">Hi, I'm <span class="accent">Neha Gupta</span></h1>
+            <p class="hero-title slide-up">Full Stack Developer | GenAI & LLM Developer</p>
+            <p class="hero-subtitle slide-up"><span id="typing-text"></span><span class="cursor">&nbsp;</span></p>
+            <p class="hero-description slide-up">I specialize in building scalable backend systems, seamless full-stack applications, and integrating cutting-edge LLM and GenAI technologies to solve complex problems.</p>
+            <div class="hero-ctas">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#resume" class="btn btn-secondary">Download Resume</a>
+            </div>
+        </div>
+        <div class="hero-background-shape"></div>
+    </header>
+
+    <main>
+        <!-- About Me Section -->
+        <section class="about-section glass reveal">
+            <div class="container section-inner">
+                <div class="about-content">
+                    <h2>Professional Summary</h2>
+                    <p>I am a passionate software engineer focused on bridging the gap between robust Full Stack architecture and state-of-the-art AI solutions. My career goal is to architect intelligent systems that not only scale globally but also harness language models to automate and innovate user experiences.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills" id="skills">
+            <div class="section-header">
+                <h2 class="section-title">Technical <span class="accent">Skills</span></h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="skills-grid container">
+                
+                <div class="skill-category reveal">
+                    <h3>Frontend</h3>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>React.js</span> <span>90%</span></div>
+                        <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>JavaScript / HTML / CSS</span> <span>95%</span></div>
+                        <div class="progress-bar"><div class="progress" style="width: 95%;"></div></div>
+                    </div>
+                </div>
+
+                <div class="skill-category reveal">
+                    <h3>Backend & DB</h3>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>Node.js & Express</span> <span>85%</span></div>
+                        <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>MongoDB / NoSQL</span> <span>80%</span></div>
+                        <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
+                    </div>
+                </div>
+
+                <div class="skill-category reveal highlight-category">
+                    <h3>AI / ML</h3>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>LLMs & NLP</span> <span>88%</span></div>
+                        <div class="progress-bar"><div class="progress" style="width: 88%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>OpenAI API & Prompt Eng.</span> <span>92%</span></div>
+                        <div class="progress-bar"><div class="progress" style="width: 92%;"></div></div>
+                    </div>
+                </div>
+
+                <div class="skill-category reveal">
+                    <h3>Tools</h3>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>Git, GitHub & Postman</span> <span>100%</span></div>
+                        <div class="progress-bar"><div class="progress" style="width: 100%;"></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GenAI / LLM Focus Section -->
+        <section class="genai-focus glass" id="genai">
+            <div class="container section-inner reveal">
+                <div class="section-header">
+                    <h2 class="section-title">GenAI <span class="accent">& LLMs</span></h2>
+                    <div class="title-underline"></div>
+                </div>
+                <div class="genai-content">
+                    <div class="genai-text">
+                        <p>My core expertise lies at the intersection of web development and Artificial Intelligence. I have successfully engineered pipelines utilizing <strong>OpenAI's APIs</strong> to power intelligent chatbots, perform semantic sentiment analysis, and automate repetitive tasks.</p>
+                        <p>Through <strong>Prompt Engineering</strong> and <strong>Retrieval-Augmented Generation (RAG)</strong>, I build systems that parse large datasets to deliver contextual, natural-language insights directly via modern React dashboards.</p>
+                    </div>
+                    <div class="genai-badges">
+                        <span class="badge ai-badge">NLP</span>
+                        <span class="badge ai-badge">Chatbots</span>
+                        <span class="badge ai-badge">Prompting</span>
+                        <span class="badge ai-badge">OpenAI</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects" id="projects">
+            <div class="section-header">
+                <h2 class="section-title">Featured <span class="accent">Work</span></h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="project-filters reveal">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="ai">GenAI & LLM</button>
+                <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+            </div>
+
+            <div class="projects-grid container">
+                <!-- Project 1 (AI Focus) -->
+                <article class="project-card reveal" data-category="ai fullstack">
+                    <div class="project-image">
+                        <img src="assets/ai_dashboard.png" alt="CogniChat AI Dashboard">
+                    </div>
+                    <div class="project-info">
+                        <h3>CogniChat Intelligent Dashboard</h3>
+                        <p>An enterprise AI application leveraging the OpenAI API to analyze and categorize customer support tickets in real-time, visualized on a glassmorphism dashboard.</p>
+                        <div class="project-tags">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>OpenAI API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn-icon" aria-label="GitHub Repo" target="_blank">
+                                <svg height="20" width="20" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+                                Code
+                            </a>
+                            <a href="#" class="btn-icon" aria-label="Live Demo" target="_blank">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                Live
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 2 (Full Stack) -->
+                <article class="project-card reveal" data-category="fullstack">
+                    <div class="project-image">
+                        <img src="assets/ecommerce.png" alt="LuxeCommerce Platform">
+                    </div>
+                    <div class="project-info">
+                        <h3>LuxeCommerce Shop</h3>
+                        <p>A highly scalable electronics e-commerce platform built on the MERN stack. Features custom authentication, payment integration, and a sophisticated admin panel.</p>
+                        <div class="project-tags">
+                            <span>MongoDB</span>
+                            <span>Express</span>
+                            <span>React</span>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn-icon" aria-label="GitHub Repo" target="_blank">
+                                <svg height="20" width="20" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+                                Code
+                            </a>
+                            <a href="#" class="btn-icon" aria-label="Live Demo" target="_blank">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                Live
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Experience & Achievements -->
+        <section class="experience" id="experience">
+            <div class="container section-inner">
+                <div class="section-header">
+                    <h2 class="section-title">Experience & <span class="accent">Achievements</span></h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Backend Engineering Intern</h3>
+                            <span class="timeline-date">TechSolutions Inc | Summer 2025</span>
+                            <p>Developed robust scalable APIs utilizing Node.js and Express. Refactored critical MongoDB queries leading to a 40% reduction in database load times.</p>
+                            <span class="badge">Internship</span>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>1st Place - Global AI Hackathon</h3>
+                            <span class="timeline-date">DevPost Hackathons | Dec 2024</span>
+                            <p>Built a context-aware LLM application that aids visually impaired users in analyzing physical documents using multi-modal AI models.</p>
+                            <span class="badge champ-badge">Winner 🏆</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resume Section -->
+        <section class="resume-section glass" id="resume">
+            <div class="container section-inner reveal center-flex">
+                <div class="resume-card">
+                    <h2>Want the precise details?</h2>
+                    <p>Review my full work history, educational background, and technical certifications.</p>
+                    <a href="#" class="btn btn-primary btn-large">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="20" height="20" style="margin-right: 8px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                        Download Full Resume
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <div class="section-header">
+                <h2 class="section-title">Let's <span class="accent">Connect</span></h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <div class="contact-container glass reveal">
+                <div class="contact-methods">
+                    <a href="mailto:neha.gupta@example.com" class="social-link" title="Email">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    </a>
+                    <a href="#" class="social-link" title="LinkedIn">
+                        <svg fill="currentColor" viewBox="0 0 24 24" width="24" height="24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                    <a href="#" class="social-link" title="GitHub">
+                        <svg fill="currentColor" viewBox="0 0 24 24" width="24" height="24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                </div>
+
+                <form id="contact-form" class="contact-form mt-4">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Your Message..." required></textarea>
+                    </div>
+                    <button type="submit" id="submit-btn" class="btn btn-primary btn-block">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Neha Gupta. Designed with precision & GenAI.</p>
+        <div class="footer-socials">
+            <a href="#">LinkedIn</a> | <a href="#">GitHub</a>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>
