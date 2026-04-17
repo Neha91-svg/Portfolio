@@ -23,26 +23,26 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-widest mb-6"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/10 border border-secondary/20 text-secondary text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-8"
           >
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
             </span>
-            Available for new projects
+            Runner-Up at VNPS 2026 & EWT Pragati 2.0
           </motion.div>
 
           <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
             Hi, I'm <br />
-            <span className="gradient-text">{DATA.name}</span>
+            <span className="gradient-text">Neha</span>
           </h1>
 
           <p className="text-xl md:text-2xl text-slate-300 mb-8 font-medium">
-            {DATA.role}
+            Full Stack Developer | Building LLM-Based Applications
           </p>
 
           <p className="text-slate-400 text-lg mb-10 max-w-lg leading-relaxed">
-            {DATA.description}
+            Backend-focused MERN developer building scalable, secure, and intelligent applications. Fostering innovation as Deputy Organization Head at E-Cell VCET.
           </p>
 
           <div className="flex flex-wrap gap-4 mb-12">
@@ -62,7 +62,7 @@ const Hero = () => {
             </motion.a>
             <motion.a 
               href="#contact" 
-              className="btn btn-secondary"
+              className="btn btn-secondary px-8"
               whileHover={{ scale: 1.05, y: -2, backgroundColor: "rgba(255,255,255,0.05)" }}
               whileTap={{ scale: 0.98 }}
             >
@@ -71,14 +71,14 @@ const Hero = () => {
           </div>
 
           <div className="flex gap-6">
-            {Object.entries({
-              github: <Github className="w-6 h-6" />,
-              linkedin: <Linkedin className="w-6 h-6" />,
-              email: <Mail className="w-6 h-6" />
-            }).map(([key, icon], idx) => (
+            {[
+              { id: 'github', icon: <Github className="w-6 h-6" />, href: DATA.socials.github },
+              { id: 'linkedin', icon: <Linkedin className="w-6 h-6" />, href: DATA.socials.linkedin },
+              { id: 'email', icon: <Mail className="w-6 h-6" />, href: `mailto:${DATA.email}` }
+            ].map((social, idx) => (
               <motion.a
-                key={key}
-                href={key === 'email' ? `mailto:${DATA.email}` : DATA.socials[key]}
+                key={social.id}
+                href={social.href}
                 className="text-slate-400 hover:text-white transition-colors"
                 whileHover={{ y: -4, scale: 1.2, color: "#6366f1" }}
                 initial={{ opacity: 0, y: 10 }}

@@ -52,12 +52,11 @@ const Contact = () => {
 
           <div className="flex gap-4 mt-12">
             {[
-              { icon: <Github />, href: DATA.socials.github, color: "hover:bg-slate-800" },
-              { icon: <Linkedin />, href: DATA.socials.linkedin, color: "hover:bg-blue-600/20" },
-              { icon: <Twitter />, href: "#", color: "hover:bg-sky-500/20" }
-            ].map((social, i) => (
+              { id: 'github', icon: <Github />, href: DATA.socials.github, color: "hover:bg-slate-800" },
+              { id: 'linkedin', icon: <Linkedin />, href: DATA.socials.linkedin, color: "hover:bg-blue-600/20" }
+            ].map((social) => (
               <a 
-                key={i}
+                key={social.id}
                 href={social.href}
                 className={`p-4 rounded-2xl bg-white/5 border border-white/5 transition-all duration-300 ${social.color}`}
               >
@@ -71,8 +70,9 @@ const Contact = () => {
            initial={{ opacity: 0, y: 20 }}
            whileInView={{ opacity: 1, y: 0 }}
            viewport={{ once: true }}
-           className="glass p-10"
+           className="glass p-10 relative overflow-hidden"
         >
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary opacity-50" />
           {submitted ? (
             <div className="h-full flex flex-col items-center justify-center text-center py-10">
               <div className="w-20 h-20 bg-green-500/10 text-green-500 rounded-full flex items-center justify-center mb-6">
@@ -90,48 +90,52 @@ const Contact = () => {
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-2">
-                <label htmlFor="name" className="text-sm font-bold text-slate-400 uppercase tracking-wider">Your Name</label>
+                <label htmlFor="name" className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em]">Your Name</label>
                 <input 
                   type="text" 
                   id="name"
                   required
                   value={formState.name}
                   onChange={(e) => setFormState({...formState, name: e.target.value})}
-                  className="w-full bg-background/50 border border-slate-700 rounded-xl px-4 py-4 text-white placeholder:text-slate-600 focus:outline-none focus:border-primary transition-colors"
+                  className="w-full bg-background/30 border border-slate-800 rounded-xl px-4 py-4 text-white placeholder:text-slate-700 focus:outline-none focus:border-primary/50 transition-colors"
                   placeholder="John Doe"
                 />
               </div>
               <div className="space-y-2">
-                <label htmlFor="email" className="text-sm font-bold text-slate-400 uppercase tracking-wider">Email Address</label>
+                <label htmlFor="email" className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em]">Email Address</label>
                 <input 
                   type="email" 
                   id="email"
                   required
                   value={formState.email}
                   onChange={(e) => setFormState({...formState, email: e.target.value})}
-                  className="w-full bg-background/50 border border-slate-700 rounded-xl px-4 py-4 text-white placeholder:text-slate-600 focus:outline-none focus:border-primary transition-colors"
+                  className="w-full bg-background/30 border border-slate-800 rounded-xl px-4 py-4 text-white placeholder:text-slate-700 focus:outline-none focus:border-primary/50 transition-colors"
                   placeholder="john@example.com"
                 />
               </div>
               <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-bold text-slate-400 uppercase tracking-wider">Message</label>
+                <label htmlFor="message" className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em]">Detailed Message</label>
                 <textarea 
                   id="message"
                   required
                   rows="5"
                   value={formState.message}
                   onChange={(e) => setFormState({...formState, message: e.target.value})}
-                  className="w-full bg-background/50 border border-slate-700 rounded-xl px-4 py-4 text-white placeholder:text-slate-600 focus:outline-none focus:border-primary transition-colors resize-none"
-                  placeholder="Tell me about your project..."
+                  className="w-full bg-background/30 border border-slate-800 rounded-xl px-4 py-4 text-white placeholder:text-slate-700 focus:outline-none focus:border-primary/50 transition-colors resize-none"
+                  placeholder="Tell me about your project or inquiry..."
                 />
               </div>
               <button 
                 type="submit" 
                 disabled={isSubmitting}
-                className="btn btn-primary w-full py-5 text-lg flex items-center justify-center gap-3 disabled:opacity-50"
+                className="btn btn-primary w-full py-5 text-sm font-bold uppercase tracking-widest flex items-center justify-center gap-3 disabled:opacity-50"
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
-                <Send className="w-5 h-5" />
+                <motion.div
+                  animate={isSubmitting ? { x: 5, opacity: 0 } : {}}
+                >
+                  <Send className="w-4 h-4" />
+                </motion.div>
               </button>
             </form>
           )}
