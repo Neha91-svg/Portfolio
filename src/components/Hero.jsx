@@ -85,7 +85,7 @@ const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 + idx * 0.1 }}
               >
-                {icon}
+                {social.icon}
               </motion.a>
             ))}
           </div>
