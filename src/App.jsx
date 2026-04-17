@@ -1,0 +1,28 @@
+import React from "react";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Skills from "./components/Skills";
+import GenAIFocus from "./components/GenAIFocus";
+import Projects from "./components/Projects";
+import Experience from "./components/Experience";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+
+function App() {
+  return (
+    <div className="bg-background min-h-screen">
+      <Navbar />
+      <main>
+        <Hero />
+        <Skills />
+        <GenAIFocus />
+        <Projects />
+        <Experience />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
+  );
+}
+
+export default App;

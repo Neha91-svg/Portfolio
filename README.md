@@ -1,36 +1,16 @@
-# Neha Gupta | Professional Portfolio
+# React + Vite
 
-> A sleek, responsive, and interactive personal portfolio tailored for a GenAI and Full Stack Developer. 
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-This project serves as a comprehensive online resume that elegantly showcases technical skills, featured projects, and professional milestones with a modern glassmorphism aesthetic.
+Currently, two official plugins are available:
 
-## 🚀 Features
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-- **Responsive Design**: Flawlessly adapts to any screen size (mobile, tablet, desktop) using modern CSS Flexbox and Grid.
-- **Dark/Light Mode**: User preference is saved via local storage with smooth transitioning themes.
-- **Scroll Spy Navigation**: The navbar dynamically highlights the active section as you scroll through the page.
-- **Interactive Micro-Animations**: Smooth scroll reveal effects, hovering states for project cards, and typing animations for a premium feel.
-- **Accessible & Semantic**: Uses HTML5 semantic tags and descriptive aria-labels for enhanced screen reader compatibility and SEO.
-- **Project Filtering**: Instantly sort through projects via categorized tags (e.g., GenAI, Full Stack).
+## React Compiler
 
-## 🛠️ Technology Stack
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-- **HTML5**: Semantic and clean structure.
-- **CSS3**: Variables, Flex/Grid layouts, Glassmorphism, Animations, and Media Queries.
-- **Vanilla JavaScript**: DOM Manipulation, Intersection Observers, and Event Listeners (No heavy frameworks!).
+## Expanding the ESLint configuration
 
-## 📂 Project Structure
-
-```bash
-├── index.html     # Main HTML document
-├── style.css      # Core styles and theme variables
-├── script.js      # Interactivity, themes, and scroll spies
-└── assets/        # Project images and icons
-```
-
-## 👩‍💻 About the Developer
-
-I'm **Neha Gupta**, a passionate software engineer specializing in scalable backend systems and state-of-the-art AI solutions. My expertise lies at the intersection of robust Full Stack architecture and Large Language Models.
-
----
-*Designed and built with modern web standards and precise GenAI integrations.*
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
