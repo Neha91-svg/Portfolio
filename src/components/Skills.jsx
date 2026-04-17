@@ -30,9 +30,11 @@ const Skills = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
-            className="glass p-8 hover:border-primary/50 transition-colors group"
+            whileHover={{ y: -8, scale: 1.02, borderColor: "rgba(99,102,241,0.4)" }}
+            className="glass p-8 transition-colors group relative overflow-hidden"
           >
-            <h3 className="text-xl font-bold mb-6 text-white group-hover:text-primary transition-colors">
+            <div className="absolute top-0 left-0 w-1 h-full bg-primary/20 group-hover:bg-primary transition-colors" />
+            <h3 className="text-xl font-bold mb-6 text-white group-hover:text-primary transition-colors duration-300">
               {skillGroup.category}
             </h3>
             <div className="space-y-6">
@@ -42,14 +44,16 @@ const Skills = () => {
                     <span className="text-sm font-medium text-slate-300">{skill.name}</span>
                     <span className="text-sm font-bold text-primary">{skill.level}%</span>
                   </div>
-                  <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
+                  <div className="h-2 bg-slate-800 rounded-full overflow-hidden relative">
                     <motion.div
                       initial={{ width: 0 }}
                       whileInView={{ width: `${skill.level}%` }}
                       viewport={{ once: true }}
-                      transition={{ duration: 1, ease: "easeOut" }}
-                      className="h-full bg-gradient-to-r from-primary to-secondary rounded-full"
-                    />
+                      transition={{ duration: 1.5, ease: "easeOut", delay: 0.2 }}
+                      className="h-full bg-gradient-to-r from-primary to-secondary rounded-full relative"
+                    >
+                      <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.2)_50%,transparent_75%)] bg-[length:250%_250%] animate-[shimmer_2s_infinite]" />
+                    </motion.div>
                   </div>
                 </div>
               ))}

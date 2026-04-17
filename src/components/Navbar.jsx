@@ -52,13 +52,24 @@ const Navbar = () => {
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a key={link.name} href={link.href} className="nav-link">
+            <motion.a 
+              key={link.name} 
+              href={link.href} 
+              className="nav-link"
+              whileHover={{ y: -1 }}
+              whileTap={{ y: 0 }}
+            >
               {link.name}
-            </a>
+            </motion.a>
           ))}
-          <a href="#contact" className="btn btn-primary px-5 py-2 text-sm">
+          <motion.a 
+            href="#contact" 
+            className="btn btn-primary px-5 py-2 text-sm"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
             Contact Me
-          </a>
+          </motion.a>
         </div>
 
         {/* Mobile Toggle */}

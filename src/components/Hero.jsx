@@ -46,24 +46,48 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-wrap gap-4 mb-12">
-            <a href="#projects" className="btn btn-primary gap-2">
-              View Projects <ArrowRight className="w-5 h-5" />
-            </a>
-            <a href="#contact" className="btn btn-secondary">
+            <motion.a 
+              href="#projects" 
+              className="btn btn-primary gap-2 group"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              View Projects 
+              <motion.span
+                animate={{ x: [0, 5, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </motion.span>
+            </motion.a>
+            <motion.a 
+              href="#contact" 
+              className="btn btn-secondary"
+              whileHover={{ scale: 1.05, y: -2, backgroundColor: "rgba(255,255,255,0.05)" }}
+              whileTap={{ scale: 0.98 }}
+            >
               Let's Talk
-            </a>
+            </motion.a>
           </div>
 
           <div className="flex gap-6">
-            <a href={DATA.socials.github} className="text-slate-400 hover:text-white transition-colors">
-              <Github className="w-6 h-6" />
-            </a>
-            <a href={DATA.socials.linkedin} className="text-slate-400 hover:text-white transition-colors">
-              <Linkedin className="w-6 h-6" />
-            </a>
-            <a href={`mailto:${DATA.email}`} className="text-slate-400 hover:text-white transition-colors">
-              <Mail className="w-6 h-6" />
-            </a>
+            {Object.entries({
+              github: <Github className="w-6 h-6" />,
+              linkedin: <Linkedin className="w-6 h-6" />,
+              email: <Mail className="w-6 h-6" />
+            }).map(([key, icon], idx) => (
+              <motion.a
+                key={key}
+                href={key === 'email' ? `mailto:${DATA.email}` : DATA.socials[key]}
+                className="text-slate-400 hover:text-white transition-colors"
+                whileHover={{ y: -4, scale: 1.2, color: "#6366f1" }}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 + idx * 0.1 }}
+              >
+                {icon}
+              </motion.a>
+            ))}
           </div>
         </motion.div>
 
@@ -73,9 +97,20 @@ const Hero = () => {
           transition={{ duration: 1, ease: "easeOut" }}
           className="relative hidden md:block"
         >
-          <div className="relative z-10 glass p-4 aspect-square max-w-[500px] overflow-hidden group">
-            <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent z-10 group-hover:opacity-100 transition-opacity" />
-             <div className="w-full h-full bg-slate-900 rounded-xl flex items-center justify-center border border-white/5">
+          <motion.div 
+            animate={{ 
+              y: [0, -20, 0],
+              rotate: [0, 1, 0]
+            }}
+            transition={{ 
+              duration: 6, 
+              repeat: Infinity, 
+              ease: "easeInOut" 
+            }}
+            className="relative z-10 glass p-4 aspect-square max-w-[500px] overflow-hidden group hover:border-primary/40 transition-colors"
+          >
+            <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+             <div className="w-full h-full bg-slate-900 rounded-xl flex items-center justify-center border border-white/5 relative">
                 {/* Visual Placeholder for high-end graphic */}
                 <div className="text-primary/50 opacity-20 transform -rotate-12 scale-150 select-none pointer-events-none font-black text-9xl">
                   GEN<br/>AI
@@ -83,29 +118,32 @@ const Hero = () => {
                 <div className="absolute inset-0 flex items-center justify-center">
                    <motion.div 
                     animate={{ rotate: 360 }}
-                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                    className="w-64 h-64 border-2 border-dashed border-primary/30 rounded-full"
+                    transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+                    className="w-72 h-72 border border-dashed border-primary/20 rounded-full"
                    />
                    <motion.div 
                     animate={{ rotate: -360 }}
-                    transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                    className="absolute w-48 h-48 border-2 border-dashed border-secondary/30 rounded-full"
+                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                    className="absolute w-56 h-56 border border-dashed border-secondary/20 rounded-full"
                    />
                 </div>
+                
+                {/* Center Glow */}
+                <div className="absolute w-32 h-32 bg-primary/20 blur-[60px] rounded-full group-hover:bg-primary/40 transition-colors" />
              </div>
-          </div>
+          </motion.div>
           {/* Floating tags */}
           <motion.div 
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 4, repeat: Infinity }}
-            className="absolute -top-4 -right-4 glass px-4 py-2 text-sm font-semibold text-white/90 z-20"
+            animate={{ y: [0, -15, 0], x: [0, 5, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute -top-6 -right-6 glass px-6 py-3 text-sm font-bold text-white/90 z-20 shadow-2xl border-white/20"
           >
             🚀 Full Stack
           </motion.div>
           <motion.div 
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 5, repeat: Infinity }}
-            className="absolute -bottom-4 -left-4 glass px-4 py-2 text-sm font-semibold text-white/90 z-20"
+            animate={{ y: [0, 15, 0], x: [0, -5, 0] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute -bottom-6 -left-6 glass px-6 py-3 text-sm font-bold text-white/90 z-20 shadow-2xl border-white/20"
           >
             🧠 AI Architect
           </motion.div>
